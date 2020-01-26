@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { RootButton } from 'Components/Button'
+import { RootButton } from '../Button'
 
 const StyledButton = styled(RootButton)`
   background: palegoldenrod;

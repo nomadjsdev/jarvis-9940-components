@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import ToggleButton from 'Components/ToggleButton'
+import ToggleButton from '../ToggleButton'
 
 const StyledDiv = styled.div`
   display: flex;
