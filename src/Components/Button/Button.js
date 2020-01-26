@@ -1,28 +1,22 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-export const StyledButton = styled.button`
-  border: none;
-  background: hotpink;
+export const RootButton = styled.button`
+  border: 1px solid black;
   border-radius: 4px;
-  color: white;
-  padding: ${props => (props.size === 'regular' ? '5px 5px;' : '10px 10px;')};
+  padding: 10px 20px;
+  background: white;
 `
 
 const Button = props => {
   const { children, ...rest } = props
 
-  return <StyledButton {...rest}>{children}</StyledButton>
+  return <RootButton {...rest}>{children}</RootButton>
 }
 
-Button.defaultProps = {
-  size: 'regular'
-}
+Button.defaultProps = {}
 
-Button.propTypes = {
-  size: PropTypes.oneOf(['regular', 'large'])
-}
+Button.propTypes = {}
 
 /** @component */
 export default Button
