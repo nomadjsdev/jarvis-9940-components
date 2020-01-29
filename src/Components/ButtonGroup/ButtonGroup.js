@@ -8,6 +8,7 @@ const StyledDiv = styled.div`
   display: flex;
   flex-direction: ${props =>
     props.orientation === 'vertical' ? 'column' : 'row'};
+  justify-content: center;
 `
 
 const ButtonGroup = props => {
@@ -33,7 +34,7 @@ ButtonGroup.defaultProps = {
 
 ButtonGroup.propTypes = {
   orientation: PropTypes.oneOf(['vertical', 'horizontal']),
-  buttons: PropTypes.arrayOf(PropTypes.string),
+  buttons: PropTypes.arrayOf(PropTypes.object),
   active: PropTypes.string
 }
 
