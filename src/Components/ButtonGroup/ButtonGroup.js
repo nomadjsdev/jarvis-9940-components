@@ -35,6 +35,7 @@ const ButtonGroup = props => {
   }
   buttonArray.push(
     <ResetButton
+      key={`reset-${buttons[0].id}`}
       onClick={() => {
         click('reset')
       }}
