@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+import { RootButton } from '../Button'
 import ToggleButton from '../ToggleButton'
 
 const StyledDiv = styled.div`
@@ -9,6 +10,10 @@ const StyledDiv = styled.div`
   flex-direction: ${props =>
     props.orientation === 'vertical' ? 'column' : 'row'};
   justify-content: center;
+`
+
+const ResetButton = styled(RootButton)`
+  background: palegoldenrod;
 `
 
 const ButtonGroup = props => {
@@ -28,6 +33,15 @@ const ButtonGroup = props => {
       </ToggleButton>
     )
   }
+  buttonArray.push(
+    <ResetButton
+      onClick={() => {
+        click('reset')
+      }}
+    >
+      Reset
+    </ResetButton>
+  )
 
   return <StyledDiv orientation={orientation}>{buttonArray}</StyledDiv>
 }

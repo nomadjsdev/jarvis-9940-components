@@ -1,4 +1,4 @@
-**This is a group of two or more `ToggleButton`, displayed horizontally or vertically. Only one button can be active at a time. The active prop should be either a buttonId, or null.**
+**This is a group of two or more `ToggleButton`, displayed horizontally or vertically. Only one button can be active at a time. The active prop should be either a buttonId, or null. A reset button is automatically appended to the group.**
 
 #### Horizontal group, 3 buttons, number 2 active
 
