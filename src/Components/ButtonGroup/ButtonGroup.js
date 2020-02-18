@@ -12,12 +12,16 @@ const StyledDiv = styled.div`
 `
 
 const ButtonGroup = props => {
-  const { orientation, buttons, active } = props
+  const { orientation, buttons, active, click } = props
 
   let buttonArray = []
   for (const button of buttons) {
     buttonArray.push(
-      <ToggleButton key={button.id} active={active === button.id}>
+      <ToggleButton
+        key={button.id}
+        active={active === button.id}
+        onClick={click(button.id)}
+      >
         {button.text}
       </ToggleButton>
     )
@@ -29,13 +33,15 @@ const ButtonGroup = props => {
 ButtonGroup.defaultProps = {
   orientation: 'vertical',
   buttons: ['One', 'Two', 'Three', 'Four'],
-  active: '0'
+  active: '0',
+  click: () => {}
 }
 
 ButtonGroup.propTypes = {
   orientation: PropTypes.oneOf(['vertical', 'horizontal']),
   buttons: PropTypes.arrayOf(PropTypes.object),
-  active: PropTypes.string
+  active: PropTypes.string,
+  click: PropTypes.func
 }
 
 /** @component */

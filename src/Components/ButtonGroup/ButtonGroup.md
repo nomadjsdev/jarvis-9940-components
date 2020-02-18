@@ -1,4 +1,4 @@
-**This is a group of two or more `ToggleButton`, displayed horizontally or vertically. Only one button can be active at a time. The active number is zero-indexed.**
+**This is a group of two or more `ToggleButton`, displayed horizontally or vertically. Only one button can be active at a time. The active prop should be either a buttonId, or null.**
 
 #### Horizontal group, 3 buttons, number 2 active
 
@@ -11,6 +11,19 @@
     { id: 'three', text: 'Three' }
   ]}
   active={'two'}
+/>
+```
+
+#### Horizontal group, 2 buttons, none active
+
+```js
+<ButtonGroup
+  orientation='horizontal'
+  buttons={[
+    { id: 'one', text: 'One' },
+    { id: 'two', text: 'Two' }
+  ]}
+  active={null}
 />
 ```
 
