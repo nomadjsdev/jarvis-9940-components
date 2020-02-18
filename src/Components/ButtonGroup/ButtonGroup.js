@@ -20,7 +20,9 @@ const ButtonGroup = props => {
       <ToggleButton
         key={button.id}
         active={active === button.id}
-        onClick={click(button.id)}
+        onClick={() => {
+          click(button.id)
+        }}
       >
         {button.text}
       </ToggleButton>
