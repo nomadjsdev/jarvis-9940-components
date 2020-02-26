@@ -4,27 +4,36 @@ import styled from 'styled-components'
 
 import { RootButton } from '../Button'
 
+import colors from '../../Styles/colors'
+
 const StyledButton = styled(RootButton)`
-  background: lightskyblue;
-  ${props => (props.active ? 'border: 1px solid red' : '')}
+  background: ${props => props.bgColor};
+  color: ${props => props.textColor};
 `
 
 const TimerButton = props => {
-  const { active, children, ...rest } = props
+  const { colorMode, alignment, children, ...rest } = props
+
+  const bgColor = colors.timer[colorMode].bg
+  const textColor = colors.timer[colorMode].text
 
   return (
-    <StyledButton active={active} {...rest}>
-      {children}
-    </StyledButton>
+    <div style={{ textAlign: alignment }}>
+      <StyledButton bgColor={bgColor} textColor={textColor} {...rest}>
+        {children}
+      </StyledButton>
+    </div>
   )
 }
 
 TimerButton.defaultProps = {
-  active: false
+  colorMode: 'off',
+  alignment: 'center'
 }
 
 TimerButton.propTypes = {
-  active: PropTypes.bool
+  colorMode: PropTypes.oneOf(['off', 'deut', 'prot', 'tri', 'mono']),
+  alignment: PropTypes.oneOf(['left', 'center', 'right'])
 }
 
 /** @component */

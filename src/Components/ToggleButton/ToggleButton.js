@@ -4,26 +4,43 @@ import styled from 'styled-components'
 
 import { RootButton } from '../Button'
 
+import colors from '../../Styles/colors'
+
 const StyledButton = styled(RootButton)`
-  ${props => (props.active ? 'background: palegreen;' : '')}
+  ${props => (props.active ? `background: ${props.bgColor};` : '')}
+  ${props => (props.active ? `color: ${props.textColor}` : '')}
 `
 
 const ToggleButton = props => {
-  const { active, children, ...rest } = props
+  const { active, colorMode, alignment, buttonKey, children, ...rest } = props
+
+  const bgColor = colors.active[colorMode].bg
+  const textColor = colors.active[colorMode].text
 
   return (
-    <StyledButton active={active} {...rest}>
-      {children}
-    </StyledButton>
+    <div key={buttonKey} style={{ textAlign: alignment }}>
+      <StyledButton
+        active={active}
+        bgColor={bgColor}
+        textColor={textColor}
+        {...rest}
+      >
+        {children}
+      </StyledButton>
+    </div>
   )
 }
 
 ToggleButton.defaultProps = {
-  active: false
+  active: false,
+  colorMode: 'off',
+  alignment: 'center'
 }
 
 ToggleButton.propTypes = {
-  active: PropTypes.bool
+  active: PropTypes.bool,
+  colorMode: PropTypes.oneOf(['off', 'deut', 'prot', 'tri', 'mono']),
+  alignment: PropTypes.oneOf(['left', 'center', 'right'])
 }
 
 /** @component */
