@@ -14,7 +14,9 @@ const StyledDiv = styled.div`
   ${props => (props.alignment === 'left' ? 'justify-content: flex-start;' : '')}
   ${props => (props.alignment === 'center' ? 'justify-content: center;' : '')}
   ${props => (props.alignment === 'right' ? 'justify-content: flex-end;' : '')}
+  max-width: ${props => (props.orientation === 'vertical' ? '200px' : '300px')};
 `
+
 const Title = styled.h3`
   margin: 8px 15px;
   text-align: ${props => props.alignment};

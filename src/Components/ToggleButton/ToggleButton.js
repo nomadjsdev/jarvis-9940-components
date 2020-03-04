@@ -8,7 +8,7 @@ import colors from '../../Styles/colors'
 
 const StyledButton = styled(RootButton)`
   ${props => (props.active ? `background: ${props.bgColor};` : '')}
-  ${props => (props.active ? `color: ${props.textColor}` : '')}
+  ${props => (props.active ? `color: ${props.textColor};` : '')}
 `
 
 const ToggleButton = props => {

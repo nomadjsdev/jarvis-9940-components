@@ -10,6 +10,10 @@ export const RootButton = styled.button`
   background: ${colors.default.off.bg};
   color: ${colors.darkText};
   font-weight: bold;
+  width: 100%;
+  max-width: 350px;
+  height: 100%;
+  max-height: 150px;
 `
 
 const Button = props => {
