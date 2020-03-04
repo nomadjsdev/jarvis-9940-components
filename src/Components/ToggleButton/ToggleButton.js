@@ -18,7 +18,7 @@ const ToggleButton = props => {
   const textColor = colors.active[colorMode].text
 
   return (
-    <div key={buttonKey} style={{ textAlign: alignment }}>
+    <div key={buttonKey} style={{ textAlign: alignment, height: '100%' }}>
       <StyledButton
         active={active}
         bgColor={bgColor}

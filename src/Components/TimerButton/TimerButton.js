@@ -18,7 +18,7 @@ const TimerButton = props => {
   const textColor = colors.timer[colorMode].text
 
   return (
-    <div style={{ textAlign: alignment }}>
+    <div style={{ textAlign: alignment, height: '100%' }}>
       <StyledButton bgColor={bgColor} textColor={textColor} {...rest}>
         {children}
       </StyledButton>
