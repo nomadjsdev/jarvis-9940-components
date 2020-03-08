@@ -14,6 +14,7 @@ const StyledDiv = styled.div`
   ${props => (props.alignment === 'left' ? 'justify-content: flex-start;' : '')}
   ${props => (props.alignment === 'center' ? 'justify-content: center;' : '')}
   ${props => (props.alignment === 'right' ? 'justify-content: flex-end;' : '')}
+  width: 100%;
   max-width: ${props => (props.orientation === 'vertical' ? '200px' : '300px')};
   height: 100%;
 `
@@ -69,7 +70,10 @@ const ButtonGroup = props => {
     )
   }
   buttonArray.push(
-    <div key={`reset-${buttons[0].id}`} style={{ textAlign: alignment }}>
+    <div
+      key={`reset-${buttons[0].id}`}
+      style={{ textAlign: alignment, width: '100%' }}
+    >
       <ResetButton
         bgColor={bgColor}
         textColor={textColor}

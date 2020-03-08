@@ -1,5 +1,9 @@
 # Change log
 
+## [1.1.2] - 2020-03-08
+
+- Fixes for button container widths
+
 ## [1.1.1] - 2020-03-04
 
 - Fixes for button sizes
